@@ -29,9 +29,9 @@ import java.util.regex.Pattern;
 
 import okhttp3.Headers;
 
-public class Cokemv extends Spider {
-    private static final String siteUrl = "https://cokemv.me";
-    private static final String siteHost = "cokemv.me";
+public class Lgyy extends Spider {
+    private static final String siteUrl = "https://www.lgyy.cc";
+    private static final String siteHost = "www.lgyy.cc";
     private String cookie="";
     private String referer="";
 
@@ -53,7 +53,7 @@ public class Cokemv extends Spider {
     public void init(Context context) {
         super.init(context);
         try {
-            playerConfig = new JSONObject("{\"cokebb\":{\"sh\":\"極速路線\",\"pu\":\"\",\"sn\":0,\"or\":999},\"mp4\":{\"sh\":\"藍光路线\",\"pu\":\"\",\"sn\":0,\"or\":999},\"cokemv\":{\"sh\":\"高速路線\",\"pu\":\"\",\"sn\":0,\"or\":999},\"cokemv001\":{\"sh\":\"海外線路\",\"pu\":\"\",\"sn\":0,\"or\":999},\"ddzy\":{\"sh\":\"蓝光采集(暂时)\",\"pu\":\"\",\"sn\":0,\"or\":999},\"tkm3u8\":{\"sh\":\"采集路线\",\"pu\":\"\",\"sn\":0,\"or\":999},\"if101\":{\"sh\":\"海外(禁國內)\",\"pu\":\"\",\"sn\":0,\"or\":999}}");
+            playerConfig = new JSONObject("{\"duoduozy\":{\"sh\":\"自建蓝光\",\"pu\":\"https://www.lgyy.cc/static/player/dplayer.php?url=\",\"sn\":1,\"or\":999},\"qq\":{\"sh\":\"腾讯\",\"pu\":\"https://www.lgyy.cc/static/player/qq.php?url=\",\"sn\":1,\"or\":999},\"qiyi\":{\"sh\":\"爱奇艺\",\"pu\":\"https://www.lgyy.cc/static/player/qiyi.php?url=\",\"sn\":1,\"or\":999},\"youku\":{\"sh\":\"优酷\",\"pu\":\"https://www.lgyy.cc/static/player/youku.php?url=\",\"sn\":1,\"or\":999},\"mgtv\":{\"sh\":\"芒果\",\"pu\":\"https://www.lgyy.cc/static/player/mgtv.php?url=\",\"sn\":1,\"or\":999},\"bilibili\":{\"sh\":\"哔哩\",\"pu\":\"https://www.lgyy.cc/static/player/bilibili.php?url=\",\"sn\":1,\"or\":999},\"xigua\":{\"sh\":\"西瓜\",\"pu\":\"https://player.lgyyapp.com/?url=\",\"sn\":1,\"or\":999},\"sohu\":{\"sh\":\"搜狐\",\"pu\":\"https://www.lgyy.cc/static/player/sohu.php?url=\",\"sn\":1,\"or\":999},\"pptv\":{\"sh\":\"PPTV\",\"pu\":\"https://player.lgyyapp.com/?url=\",\"sn\":1,\"or\":999},\"wjm3u8\":{\"sh\":\"无尽资源\",\"pu\":\"https://www.lgyy.cc/static/player/wujin.php?url=\",\"sn\":1,\"or\":999}}");
             filterConfig = new JSONObject("{\"5\":[{\"key\":3,\"name\":\"剧情\",\"value\":[{\"n\":\"全部\",\"v\":\"\"},{\"n\":\"喜剧\",\"v\":\"喜劇\"},{\"n\":\"爱情\",\"v\":\"愛情\"},{\"n\":\"恐怖\",\"v\":\"恐怖\"},{\"n\":\"动作\",\"v\":\"動作\"},{\"n\":\"科幻\",\"v\":\"科幻\"},{\"n\":\"剧情\",\"v\":\"劇情\"},{\"n\":\"战争\",\"v\":\"戰爭\"},{\"n\":\"犯罪\",\"v\":\"犯罪\"},{\"n\":\"动画\",\"v\":\"動畫\"},{\"n\":\"奇幻\",\"v\":\"奇幻\"},{\"n\":\"悬疑\",\"v\":\"懸疑\"},{\"n\":\"微电影\",\"v\":\"微電影\"}]},{\"key\":11,\"name\":\"年份\",\"value\":[{\"n\":\"全部\",\"v\":\"\"},{\"n\":\"2022\",\"v\":\"2022\"},{\"n\":\"2021\",\"v\":\"2021\"},{\"n\":\"2020\",\"v\":\"2020\"},{\"n\":\"2019\",\"v\":\"2019\"},{\"n\":\"2018\",\"v\":\"2018\"},{\"n\":\"2017\",\"v\":\"2017\"},{\"n\":\"2016\",\"v\":\"2016\"},{\"n\":\"2015\",\"v\":\"2015\"},{\"n\":\"2014\",\"v\":\"2014\"},{\"n\":\"2013\",\"v\":\"2013\"},{\"n\":\"2012\",\"v\":\"2012\"},{\"n\":\"2011\",\"v\":\"2011\"},{\"n\":\"2010\",\"v\":\"2010\"}]},{\"key\":4,\"name\":\"语言\",\"value\":[{\"n\":\"全部\",\"v\":\"\"},{\"n\":\"国语\",\"v\":\"國語\"},{\"n\":\"英语\",\"v\":\"英語\"},{\"n\":\"粤语\",\"v\":\"粵語\"},{\"n\":\"闽南语\",\"v\":\"閩南語\"},{\"n\":\"韩语\",\"v\":\"韓語\"},{\"n\":\"日语\",\"v\":\"日語\"},{\"n\":\"法语\",\"v\":\"法語\"},{\"n\":\"德语\",\"v\":\"德語\"},{\"n\":\"其它\",\"v\":\"其它\"}]},{\"key\":5,\"name\":\"字母\",\"value\":[{\"n\":\"全部\",\"v\":\"\"},{\"n\":\"A\",\"v\":\"A\"},{\"n\":\"B\",\"v\":\"B\"},{\"n\":\"C\",\"v\":\"C\"},{\"n\":\"D\",\"v\":\"D\"},{\"n\":\"E\",\"v\":\"E\"},{\"n\":\"F\",\"v\":\"F\"},{\"n\":\"G\",\"v\":\"G\"},{\"n\":\"H\",\"v\":\"H\"},{\"n\":\"I\",\"v\":\"I\"},{\"n\":\"J\",\"v\":\"J\"},{\"n\":\"K\",\"v\":\"K\"},{\"n\":\"L\",\"v\":\"L\"},{\"n\":\"M\",\"v\":\"M\"},{\"n\":\"N\",\"v\":\"N\"},{\"n\":\"O\",\"v\":\"O\"},{\"n\":\"P\",\"v\":\"P\"},{\"n\":\"Q\",\"v\":\"Q\"},{\"n\":\"R\",\"v\":\"R\"},{\"n\":\"S\",\"v\":\"S\"},{\"n\":\"T\",\"v\":\"T\"},{\"n\":\"U\",\"v\":\"U\"},{\"n\":\"V\",\"v\":\"V\"},{\"n\":\"W\",\"v\":\"W\"},{\"n\":\"X\",\"v\":\"X\"},{\"n\":\"Y\",\"v\":\"Y\"},{\"n\":\"Z\",\"v\":\"Z\"},{\"n\":\"0-9\",\"v\":\"0-9\"}]},{\"key\":2,\"name\":\"排序\",\"value\":[{\"n\":\"时间\",\"v\":\"time\"},{\"n\":\"人气\",\"v\":\"hits\"},{\"n\":\"评分\",\"v\":\"score\"}]}],\"2\":[{\"key\":0,\"name\":\"类型\",\"value\":[{\"n\":\"全部\",\"v\":\"2\"},{\"n\":\"大陆剧\",\"v\":\"13\"},{\"n\":\"香港剧\",\"v\":\"14\"},{\"n\":\"韩国剧\",\"v\":\"15\"},{\"n\":\"欧美剧\",\"v\":\"16\"},{\"n\":\"日本剧\",\"v\":\"20\"},{\"n\":\"台湾剧\",\"v\":\"21\"},{\"n\":\"泰国剧\",\"v\":\"22\"}]},{\"key\":1,\"name\":\"地区\",\"value\":[{\"n\":\"全部\",\"v\":\"\"},{\"n\":\"中国大陆\",\"v\":\"中国大陆\"},{\"n\":\"韩国\",\"v\":\"韩国\"},{\"n\":\"中国香港\",\"v\":\"中国香港\"},{\"n\":\"中国台湾\",\"v\":\"中国台湾\"},{\"n\":\"日本\",\"v\":\"日本\"},{\"n\":\"美国\",\"v\":\"美国\"},{\"n\":\"泰国\",\"v\":\"泰国\"},{\"n\":\"英国\",\"v\":\"英国\"},{\"n\":\"新加坡\",\"v\":\"新加坡\"},{\"n\":\"其他\",\"v\":\"其他\"}]},{\"key\":11,\"name\":\"年份\",\"value\":[{\"n\":\"全部\",\"v\":\"\"},{\"n\":\"2022\",\"v\":\"2022\"},{\"n\":\"2021\",\"v\":\"2021\"},{\"n\":\"2020\",\"v\":\"2020\"},{\"n\":\"2019\",\"v\":\"2019\"},{\"n\":\"2018\",\"v\":\"2018\"},{\"n\":\"2017\",\"v\":\"2017\"},{\"n\":\"2016\",\"v\":\"2016\"},{\"n\":\"2015\",\"v\":\"2015\"},{\"n\":\"2014\",\"v\":\"2014\"},{\"n\":\"2013\",\"v\":\"2013\"},{\"n\":\"2012\",\"v\":\"2012\"},{\"n\":\"2011\",\"v\":\"2011\"},{\"n\":\"2010\",\"v\":\"2010\"},{\"n\":\"2009\",\"v\":\"2009\"},{\"n\":\"2008\",\"v\":\"2008\"},{\"n\":\"2007\",\"v\":\"2007\"},{\"n\":\"2006\",\"v\":\"2006\"},{\"n\":\"2005\",\"v\":\"2005\"},{\"n\":\"2004\",\"v\":\"2004\"}]},{\"key\":4,\"name\":\"语言\",\"value\":[{\"n\":\"全部\",\"v\":\"\"},{\"n\":\"国语\",\"v\":\"国语\"},{\"n\":\"英语\",\"v\":\"英语\"},{\"n\":\"粤语\",\"v\":\"粤语\"},{\"n\":\"闽南语\",\"v\":\"闽南语\"},{\"n\":\"韩语\",\"v\":\"韩语\"},{\"n\":\"日语\",\"v\":\"日语\"},{\"n\":\"其它\",\"v\":\"其它\"}]},{\"key\":5,\"name\":\"字母\",\"value\":[{\"n\":\"全部\",\"v\":\"\"},{\"n\":\"A\",\"v\":\"A\"},{\"n\":\"B\",\"v\":\"B\"},{\"n\":\"C\",\"v\":\"C\"},{\"n\":\"D\",\"v\":\"D\"},{\"n\":\"E\",\"v\":\"E\"},{\"n\":\"F\",\"v\":\"F\"},{\"n\":\"G\",\"v\":\"G\"},{\"n\":\"H\",\"v\":\"H\"},{\"n\":\"I\",\"v\":\"I\"},{\"n\":\"J\",\"v\":\"J\"},{\"n\":\"K\",\"v\":\"K\"},{\"n\":\"L\",\"v\":\"L\"},{\"n\":\"M\",\"v\":\"M\"},{\"n\":\"N\",\"v\":\"N\"},{\"n\":\"O\",\"v\":\"O\"},{\"n\":\"P\",\"v\":\"P\"},{\"n\":\"Q\",\"v\":\"Q\"},{\"n\":\"R\",\"v\":\"R\"},{\"n\":\"S\",\"v\":\"S\"},{\"n\":\"T\",\"v\":\"T\"},{\"n\":\"U\",\"v\":\"U\"},{\"n\":\"V\",\"v\":\"V\"},{\"n\":\"W\",\"v\":\"W\"},{\"n\":\"X\",\"v\":\"X\"},{\"n\":\"Y\",\"v\":\"Y\"},{\"n\":\"Z\",\"v\":\"Z\"},{\"n\":\"0-9\",\"v\":\"0-9\"}]},{\"key\":2,\"name\":\"排序\",\"value\":[{\"n\":\"时间\",\"v\":\"time\"},{\"n\":\"人气\",\"v\":\"hits\"},{\"n\":\"评分\",\"v\":\"score\"}]}],\"1\":[{\"key\":0,\"name\":\"分类\",\"value\":[{\"n\":\"全部\",\"v\":\"1\"},{\"n\":\"动作片\",\"v\":\"6\"},{\"n\":\"喜剧片\",\"v\":\"7\"},{\"n\":\"爱情片\",\"v\":\"8\"},{\"n\":\"科幻片\",\"v\":\"9\"},{\"n\":\"恐怖片\",\"v\":\"10\"},{\"n\":\"剧情片\",\"v\":\"11\"},{\"n\":\"战争片\",\"v\":\"12\"},{\"n\":\"犯罪片\",\"v\":\"23\"},{\"n\":\"奇幻片\",\"v\":\"24\"},{\"n\":\"悬疑片\",\"v\":\"25\"},{\"n\":\"记录片\",\"v\":\"27\"}]},{\"key\":1,\"name\":\"地区\",\"value\":[{\"n\":\"全部\",\"v\":\"\"},{\"n\":\"中国大陆\",\"v\":\"中国大陆\"},{\"n\":\"中国香港\",\"v\":\"中国香港\"},{\"n\":\"中国台湾\",\"v\":\"中国台湾\"},{\"n\":\"美国\",\"v\":\"美国\"},{\"n\":\"法国\",\"v\":\"法国\"},{\"n\":\"英国\",\"v\":\"英国\"},{\"n\":\"日本\",\"v\":\"日本\"},{\"n\":\"韩国\",\"v\":\"韩国\"},{\"n\":\"德国\",\"v\":\"德国\"},{\"n\":\"泰国\",\"v\":\"泰国\"},{\"n\":\"印度\",\"v\":\"印度\"},{\"n\":\"意大利\",\"v\":\"意大利\"},{\"n\":\"西班牙\",\"v\":\"西班牙\"},{\"n\":\"加拿大\",\"v\":\"加拿大\"},{\"n\":\"其他\",\"v\":\"其他\"}]},{\"key\":11,\"name\":\"年份\",\"value\":[{\"n\":\"全部\",\"v\":\"\"},{\"n\":\"2022\",\"v\":\"2022\"},{\"n\":\"2021\",\"v\":\"2021\"},{\"n\":\"2020\",\"v\":\"2020\"},{\"n\":\"2019\",\"v\":\"2019\"},{\"n\":\"2018\",\"v\":\"2018\"},{\"n\":\"2017\",\"v\":\"2017\"},{\"n\":\"2016\",\"v\":\"2016\"},{\"n\":\"2015\",\"v\":\"2015\"},{\"n\":\"2014\",\"v\":\"2014\"},{\"n\":\"2013\",\"v\":\"2013\"},{\"n\":\"2012\",\"v\":\"2012\"},{\"n\":\"2011\",\"v\":\"2011\"},{\"n\":\"2010\",\"v\":\"2010\"}]},{\"key\":4,\"name\":\"语言\",\"value\":[{\"n\":\"全部\",\"v\":\"\"},{\"n\":\"国语\",\"v\":\"国语\"},{\"n\":\"英语\",\"v\":\"英语\"},{\"n\":\"粤语\",\"v\":\"粤语\"},{\"n\":\"闽南语\",\"v\":\"闽南语\"},{\"n\":\"韩语\",\"v\":\"韩语\"},{\"n\":\"日语\",\"v\":\"日语\"},{\"n\":\"法语\",\"v\":\"法语\"},{\"n\":\"德语\",\"v\":\"德语\"},{\"n\":\"其它\",\"v\":\"其它\"}]},{\"key\":5,\"name\":\"字母\",\"value\":[{\"n\":\"全部\",\"v\":\"\"},{\"n\":\"A\",\"v\":\"A\"},{\"n\":\"B\",\"v\":\"B\"},{\"n\":\"C\",\"v\":\"C\"},{\"n\":\"D\",\"v\":\"D\"},{\"n\":\"E\",\"v\":\"E\"},{\"n\":\"F\",\"v\":\"F\"},{\"n\":\"G\",\"v\":\"G\"},{\"n\":\"H\",\"v\":\"H\"},{\"n\":\"I\",\"v\":\"I\"},{\"n\":\"J\",\"v\":\"J\"},{\"n\":\"K\",\"v\":\"K\"},{\"n\":\"L\",\"v\":\"L\"},{\"n\":\"M\",\"v\":\"M\"},{\"n\":\"N\",\"v\":\"N\"},{\"n\":\"O\",\"v\":\"O\"},{\"n\":\"P\",\"v\":\"P\"},{\"n\":\"Q\",\"v\":\"Q\"},{\"n\":\"R\",\"v\":\"R\"},{\"n\":\"S\",\"v\":\"S\"},{\"n\":\"T\",\"v\":\"T\"},{\"n\":\"U\",\"v\":\"U\"},{\"n\":\"V\",\"v\":\"V\"},{\"n\":\"W\",\"v\":\"W\"},{\"n\":\"X\",\"v\":\"X\"},{\"n\":\"Y\",\"v\":\"Y\"},{\"n\":\"Z\",\"v\":\"Z\"},{\"n\":\"0-9\",\"v\":\"0-9\"}]},{\"key\":2,\"name\":\"排序\",\"value\":[{\"n\":\"时间\",\"v\":\"time\"},{\"n\":\"人气\",\"v\":\"hits\"},{\"n\":\"评分\",\"v\":\"score\"}]}],\"4\":[{\"key\":0,\"name\":\"分类\",\"value\":[{\"n\":\"全部\",\"v\":\"4\"},{\"n\":\"动画电影\",\"v\":\"41\"}]},{\"key\":3,\"name\":\"剧情\",\"value\":[{\"n\":\"全部\",\"v\":\"\"},{\"n\":\"情感\",\"v\":\"情感\"},{\"n\":\"科幻\",\"v\":\"科幻\"},{\"n\":\"热血\",\"v\":\"热血\"},{\"n\":\"推理\",\"v\":\"推理\"},{\"n\":\"搞笑\",\"v\":\"搞笑\"},{\"n\":\"冒险\",\"v\":\"冒险\"},{\"n\":\"萝莉\",\"v\":\"萝莉\"},{\"n\":\"校园\",\"v\":\"校园\"},{\"n\":\"动作\",\"v\":\"动作\"},{\"n\":\"机战\",\"v\":\"机战\"},{\"n\":\"运动\",\"v\":\"运动\"},{\"n\":\"战争\",\"v\":\"战争\"},{\"n\":\"少年\",\"v\":\"少年\"},{\"n\":\"少女\",\"v\":\"少女\"},{\"n\":\"社会\",\"v\":\"社会\"},{\"n\":\"原创\",\"v\":\"原创\"},{\"n\":\"亲子\",\"v\":\"亲子\"},{\"n\":\"益智\",\"v\":\"益智\"},{\"n\":\"励志\",\"v\":\"励志\"},{\"n\":\"其他\",\"v\":\"其他\"}]},{\"key\":1,\"name\":\"地区\",\"value\":[{\"n\":\"全部\",\"v\":\"\"},{\"n\":\"大陆\",\"v\":\"大陆\"},{\"n\":\"韩国\",\"v\":\"韩国\"},{\"n\":\"中国香港\",\"v\":\"中国香港\"},{\"n\":\"中国台湾\",\"v\":\"中国台湾\"},{\"n\":\"日本\",\"v\":\"日本\"},{\"n\":\"美国\",\"v\":\"美国\"},{\"n\":\"泰国\",\"v\":\"泰国\"},{\"n\":\"英国\",\"v\":\"英国\"},{\"n\":\"新加坡\",\"v\":\"新加坡\"},{\"n\":\"其他\",\"v\":\"其他\"}]},{\"key\":11,\"name\":\"年份\",\"value\":[{\"n\":\"全部\",\"v\":\"\"},{\"n\":\"2022\",\"v\":\"2022\"},{\"n\":\"2021\",\"v\":\"2021\"},{\"n\":\"2020\",\"v\":\"2020\"},{\"n\":\"2019\",\"v\":\"2019\"},{\"n\":\"2018\",\"v\":\"2018\"},{\"n\":\"2017\",\"v\":\"2017\"},{\"n\":\"2016\",\"v\":\"2016\"},{\"n\":\"2015\",\"v\":\"2015\"},{\"n\":\"2014\",\"v\":\"2014\"},{\"n\":\"2013\",\"v\":\"2013\"},{\"n\":\"2012\",\"v\":\"2012\"},{\"n\":\"2011\",\"v\":\"2011\"},{\"n\":\"2010\",\"v\":\"2010\"}]},{\"key\":4,\"name\":\"语言\",\"value\":[{\"n\":\"全部\",\"v\":\"\"},{\"n\":\"国语\",\"v\":\"国语\"},{\"n\":\"英语\",\"v\":\"英语\"},{\"n\":\"粤语\",\"v\":\"粤语\"},{\"n\":\"闽南语\",\"v\":\"闽南语\"},{\"n\":\"韩语\",\"v\":\"韩语\"},{\"n\":\"日语\",\"v\":\"日语\"},{\"n\":\"其它\",\"v\":\"其它\"}]},{\"key\":5,\"name\":\"字母\",\"value\":[{\"n\":\"全部\",\"v\":\"\"},{\"n\":\"A\",\"v\":\"A\"},{\"n\":\"B\",\"v\":\"B\"},{\"n\":\"C\",\"v\":\"C\"},{\"n\":\"D\",\"v\":\"D\"},{\"n\":\"E\",\"v\":\"E\"},{\"n\":\"F\",\"v\":\"F\"},{\"n\":\"G\",\"v\":\"G\"},{\"n\":\"H\",\"v\":\"H\"},{\"n\":\"I\",\"v\":\"I\"},{\"n\":\"J\",\"v\":\"J\"},{\"n\":\"K\",\"v\":\"K\"},{\"n\":\"L\",\"v\":\"L\"},{\"n\":\"M\",\"v\":\"M\"},{\"n\":\"N\",\"v\":\"N\"},{\"n\":\"O\",\"v\":\"O\"},{\"n\":\"P\",\"v\":\"P\"},{\"n\":\"Q\",\"v\":\"Q\"},{\"n\":\"R\",\"v\":\"R\"},{\"n\":\"S\",\"v\":\"S\"},{\"n\":\"T\",\"v\":\"T\"},{\"n\":\"U\",\"v\":\"U\"},{\"n\":\"V\",\"v\":\"V\"},{\"n\":\"W\",\"v\":\"W\"},{\"n\":\"X\",\"v\":\"X\"},{\"n\":\"Y\",\"v\":\"Y\"},{\"n\":\"Z\",\"v\":\"Z\"},{\"n\":\"0-9\",\"v\":\"0-9\"}]},{\"key\":2,\"name\":\"排序\",\"value\":[{\"n\":\"时间\",\"v\":\"time\"},{\"n\":\"人气\",\"v\":\"hits\"},{\"n\":\"评分\",\"v\":\"score\"}]}],\"3\":[{\"key\":1,\"name\":\"地区\",\"value\":[{\"n\":\"全部\",\"v\":\"\"},{\"n\":\"中国大陆\",\"v\":\"中国大陆\"},{\"n\":\"韩国\",\"v\":\"韩国\"}]},{\"key\":11,\"name\":\"年份\",\"value\":[{\"n\":\"全部\",\"v\":\"\"},{\"n\":\"2022\",\"v\":\"2022\"},{\"n\":\"2021\",\"v\":\"2021\"},{\"n\":\"2020\",\"v\":\"2020\"},{\"n\":\"2019\",\"v\":\"2019\"},{\"n\":\"2018\",\"v\":\"2018\"},{\"n\":\"2017\",\"v\":\"2017\"},{\"n\":\"2016\",\"v\":\"2016\"},{\"n\":\"2015\",\"v\":\"2015\"},{\"n\":\"2014\",\"v\":\"2014\"},{\"n\":\"2013\",\"v\":\"2013\"},{\"n\":\"2012\",\"v\":\"2012\"},{\"n\":\"2011\",\"v\":\"2011\"},{\"n\":\"2010\",\"v\":\"2010\"},{\"n\":\"2009\",\"v\":\"2009\"},{\"n\":\"2008\",\"v\":\"2008\"},{\"n\":\"2007\",\"v\":\"2007\"},{\"n\":\"2006\",\"v\":\"2006\"},{\"n\":\"2005\",\"v\":\"2005\"},{\"n\":\"2004\",\"v\":\"2004\"}]},{\"key\":4,\"name\":\"语言\",\"value\":[{\"n\":\"全部\",\"v\":\"\"},{\"n\":\"国语\",\"v\":\"国语\"},{\"n\":\"英语\",\"v\":\"英语\"},{\"n\":\"粤语\",\"v\":\"粤语\"},{\"n\":\"闽南语\",\"v\":\"闽南语\"},{\"n\":\"韩语\",\"v\":\"韩语\"},{\"n\":\"日语\",\"v\":\"日语\"},{\"n\":\"其它\",\"v\":\"其它\"}]},{\"key\":5,\"name\":\"字母\",\"value\":[{\"n\":\"全部\",\"v\":\"\"},{\"n\":\"A\",\"v\":\"A\"},{\"n\":\"B\",\"v\":\"B\"},{\"n\":\"C\",\"v\":\"C\"},{\"n\":\"D\",\"v\":\"D\"},{\"n\":\"E\",\"v\":\"E\"},{\"n\":\"F\",\"v\":\"F\"},{\"n\":\"G\",\"v\":\"G\"},{\"n\":\"H\",\"v\":\"H\"},{\"n\":\"I\",\"v\":\"I\"},{\"n\":\"J\",\"v\":\"J\"},{\"n\":\"K\",\"v\":\"K\"},{\"n\":\"L\",\"v\":\"L\"},{\"n\":\"M\",\"v\":\"M\"},{\"n\":\"N\",\"v\":\"N\"},{\"n\":\"O\",\"v\":\"O\"},{\"n\":\"P\",\"v\":\"P\"},{\"n\":\"Q\",\"v\":\"Q\"},{\"n\":\"R\",\"v\":\"R\"},{\"n\":\"S\",\"v\":\"S\"},{\"n\":\"T\",\"v\":\"T\"},{\"n\":\"U\",\"v\":\"U\"},{\"n\":\"V\",\"v\":\"V\"},{\"n\":\"W\",\"v\":\"W\"},{\"n\":\"X\",\"v\":\"X\"},{\"n\":\"Y\",\"v\":\"Y\"},{\"n\":\"Z\",\"v\":\"Z\"},{\"n\":\"0-9\",\"v\":\"0-9\"}]},{\"key\":2,\"name\":\"排序\",\"value\":[{\"n\":\"时间\",\"v\":\"time\"},{\"n\":\"人气\",\"v\":\"hits\"},{\"n\":\"评分\",\"v\":\"score\"}]}]}");
         } catch (JSONException e) {
             SpiderDebug.log(e);
@@ -96,13 +96,13 @@ public class Cokemv extends Spider {
         try {
             Document doc = Jsoup.parse(OkHttpUtil.string(siteUrl, getHeaders2(siteUrl,referer)));
             // 分类节点
-            Elements elements = doc.select("ul.navbar-items>li.navbar-item>a");
+            Elements elements = doc.select("ul[class='navbar-items swiper-wrapper'] >li a");
             System.out.println("shouye" + elements);
             JSONArray classes = new JSONArray();
             for (Element ele : elements) {
                 String name = ele.text();
                 boolean show = name.equals("电影") ||
-                        name.equals("续剧") ||
+                        name.equals("电视剧") ||
                         name.equals("综艺") ||
                         name.equals("动漫");
 
@@ -219,7 +219,7 @@ public class Cokemv extends Spider {
             JSONArray videos = new JSONArray();
             if (!html.contains("没有找到您想要的结果哦")) {
                 // 取当前分类页的视频列表
-                Elements list = doc.select("div.module > a");
+                Elements list = doc.select("div[class='module-items module-poster-items-base'] >a");
                 System.out.print("list++f" + list);
                 for (int i = 0; i < list.size(); i++) {
                     Element vod = list.get(i);
@@ -398,7 +398,7 @@ public class Cokemv extends Spider {
             //定义播放用的headers
             JSONObject headers = new JSONObject();
             //headers.put("Host", " cokemv.co");
-            headers.put("origin", " https://cokemv.me");
+            headers.put("origin", " https://www.lgyy.cc");
             headers.put("User-Agent", " Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36");
             headers.put("Accept", " */*");
             headers.put("Accept-Language", " zh-CN,zh;q=0.9,en-US;q=0.3,en;q=0.7");
@@ -440,10 +440,10 @@ public class Cokemv extends Spider {
         HashMap<String, String> headers = new HashMap<>();
         headers.put("User-Agent", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36");
         if(!ref.equals("google")){
-            headers.put("Authority", "cokemv.me");
+            headers.put("Authority", "www.lgyy.cc");
             if(ref.length()>0){
                 if(ref.equals("origin")){
-                    headers.put("Origin", "https://cokemv.me");
+                    headers.put("Origin", "https://www.lgyy.cc");
                 } else {
                     headers.put("Referer", ref);
                 }
@@ -458,7 +458,7 @@ public class Cokemv extends Spider {
     
     protected void getCookie(){
         cookie="";
-        String cookieurl="https://cokemv.me/zzzzz";
+        String cookieurl="https://www.lgyy.cc/zzzzz";
         Map<String, List<String>> cookies = new HashMap<>();
         OkHttpUtil.string(cookieurl,getHeaders2(cookieurl,""),cookies);
         for( Map.Entry<String, List<String>> entry : cookies.entrySet() ){
@@ -472,35 +472,29 @@ public class Cokemv extends Spider {
     @Override
     public String searchContent(String key, boolean quick) {
         try {
-            String url = "https://www.xn--flw351e.cf/search?q=site%3A" + siteHost + "+" + URLEncoder.encode(key);
-            Document doc = Jsoup.parse(OkHttpUtil.string(url,getHeaders2(url,"google")));
+            if (quick)
+                return "";
+            long currentTime = System.currentTimeMillis();
+            String url = siteUrl + "/index.php/ajax/suggest?mid=1&wd=" + URLEncoder.encode(key) + "&limit=10&timestamp=" + currentTime;
+            JSONObject searchResult = new JSONObject(OkHttpUtil.string(url, getHeaders(url)));
             JSONObject result = new JSONObject();
             JSONArray videos = new JSONArray();
-            Elements sourceList = doc.select("div.yuRUbf a");
-            if(sourceList.size()>0){
-                for (int i = 0; i < 1; i++) {
-                    Element sourcess = sourceList.get(i);
-                    String sourceName = sourcess.select("h3.LC20lb.MBeuO.DKV0Md").text();
-                    String list1 = sourcess.attr("href");
-                    if(list1.contains("/s/")||list1.contains("play")||list1.contains("performer")||list1.contains("search")||list1.contains("jsessionid")){
-                        continue;
+            if (searchResult.getInt("total") > 0) {
+                JSONArray lists = new JSONArray(searchResult.getString("list"));
+                for (int i = 0; i < lists.length(); i++) {
+                    JSONObject vod = lists.getJSONObject(i);
+                    String id = vod.getString("id");
+                    String title = vod.getString("name");
+                    String cover = vod.getString("pic");
+                    if (!TextUtils.isEmpty(cover) && !cover.startsWith("http")) {
+                        cover = siteUrl + cover;
                     }
-                    if (sourceName.contains(key)) {
-                        Document link = Jsoup.parse(OkHttpUtil.string(list1, getHeaders2(list1,referer)));
-                        JSONObject v = new JSONObject();
-                        Matcher matcher = regexVid.matcher(list1);
-                        if (!matcher.find()) continue;
-                
-                        String cover = link.selectFirst("div.module-item-cover div.module-item-pic > img").attr("data-original");
-            String title = link.selectFirst("div.module-info-main div.module-info-heading > h1").text();
-                        String id = matcher.group(1);
-                        
-                        v.put("vod_id", id);
-                        v.put("vod_name", title);
-                        v.put("vod_remarks", "");                      
-                        v.put("vod_pic", cover);
-                        videos.put(v);
-                    }
+                    JSONObject v = new JSONObject();
+                    v.put("vod_id", id);
+                    v.put("vod_name", title);
+                    v.put("vod_pic", cover);
+                    v.put("vod_remarks", "");
+                    videos.put(v);
                 }
             }
             result.put("list", videos);
@@ -511,3 +505,17 @@ public class Cokemv extends Spider {
         return "";
     }
 }
+ //   private static String doReplaceRegex(Pattern pattern, String src) {
+//        if (pattern == null)
+//            return src;
+//        try {
+ //           Matcher matcher = pattern.matcher(src);
+//            if (matcher.find()) {
+//                return matcher.group(1).trim();
+//            }
+ //       } catch (Exception e) {
+  //          SpiderDebug.log(e);
+//        }
+ //       return src;
+//      }
+//}

@@ -30,7 +30,7 @@ public class Zhaozy extends Spider {
             if (pattern.matcher(list.get(0)).find()) {
                 return pushAgent.detailContent(list);
             }
-            Matcher matcher = pattern.matcher(OkHttpUtil.string("https://zhaoziyuan.la/" + list.get(0), null));
+            Matcher matcher = pattern.matcher(OkHttpUtil.string("https://zhaoziyuan.me/" + list.get(0), null));
             if (!matcher.find()) {
                 return "";
             }
@@ -65,7 +65,7 @@ public class Zhaozy extends Spider {
 
     public String searchContent(String key, boolean quick) {
         try {
-            String url = "https://zhaoziyuan.la/so?filename=" + URLEncoder.encode(key);
+            String url = "https://zhaoziyuan.me/so?filename=" + URLEncoder.encode(key);
             Document docs = Jsoup.parse(OkHttpUtil.string(url, null));
             JSONObject result = new JSONObject();
             JSONArray videos = new JSONArray();
